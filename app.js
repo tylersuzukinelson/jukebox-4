@@ -80,6 +80,14 @@ $(document).ready(function() {
 
   // Add Your Code Here.
 
+  // Make the song notes hidden when the page initially loads. Then,
+  // when you double click a song, they should slide down over 0.3 second.
+  // (Hint: See the `dblclick` event type)
+  $('div.notes').hide();
+  $('span.title').on('dblclick', function() {
+    $(this).siblings('.notes').slideDown(300);
+  });
+
   // When the delete icons for a song are clicked slide up that song over 0.5s.
   // AFTER the song is finished sliding up, remove it from the list entirely.
   $('.fa-trash').on('click', function() {
