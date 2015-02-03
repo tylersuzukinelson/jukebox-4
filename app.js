@@ -80,6 +80,12 @@ $(document).ready(function() {
 
   // Add Your Code Here.
 
+  // When the page loads, make the message fade in over 0.8s. Then, after 3s
+  // have passed, fade out the message over 0.8s.
+  $('#message').fadeIn(800, function() {
+    $('#message').delay(3000).fadeOut(800);
+  });
+
   // Make the song notes hidden when the page initially loads. Then,
   // when you double click a song, they should slide down over 0.3 second.
   // (Hint: See the `dblclick` event type)
