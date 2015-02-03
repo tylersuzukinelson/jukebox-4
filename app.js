@@ -103,4 +103,9 @@ $(document).ready(function() {
     });
   });
 
+  // Make the Library and Playlist sortable.
+  // Allow dragging and dropping songs between the Library and the Playlist.
+  $('#playlist-list, #library-list').sortable({
+    connectWith: 'ul'
+  }).disableSelection();
 });
