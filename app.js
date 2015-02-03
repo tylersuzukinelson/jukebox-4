@@ -89,8 +89,11 @@ $(document).ready(function() {
   // Make the song notes hidden when the page initially loads. Then,
   // when you double click a song, they should slide down over 0.3 second.
   // (Hint: See the `dblclick` event type)
+  // When a song is played and then returned to the library, try double 
+  // clicked it to show the notes. If you weren't careful, it won't work 
+  // anymore! Use event delegation with the `on` method to fix this problem.
   $('div.notes').hide();
-  $('span.title').on('dblclick', function() {
+  $('ul').on('dblclick', 'span.title', function() {
     $(this).siblings('.notes').slideDown(300);
   });
 
