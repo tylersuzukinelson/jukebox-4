@@ -125,7 +125,7 @@ $(document).ready(function() {
   // anymore! Use event delegation with the `on` method to fix this problem.
   $('div.notes').hide();
   $('ul').on('dblclick', 'span.title', function() {
-    $(this).siblings('.notes').slideDown(300);
+    $(this).siblings('.notes').slideToggle(300);
   });
 
   // When the delete icons for a song are clicked slide up that song over 0.5s.
