@@ -30,11 +30,24 @@ li .fa-bars {
   cursor: move;
 }
 
+/*
+  Make the songs' delete icons have a default opacity of 0.3.
+  When your mouse hovers over a song, animate its delete
+  icon's opacity to 1 using CSS transitions. (Hint: The
+  ":hover" CSS Selector may be helpful)
+*/
+
 li .fa-trash {
   float: right;
   cursor: pointer;
   position: relative;
   top: 2px;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+
+li .fa-trash:hover {
+  opacity: 1;
 }
 
 li .notes {
