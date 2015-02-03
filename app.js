@@ -111,4 +111,11 @@ $(document).ready(function() {
   $('#playlist-list, #library-list').sortable({
     connectWith: 'ul'
   }).disableSelection();
+
+  // Filter the library, so that it includes only songs that match whatever
+  // is typed in the "filter" box.
+  $('#filter-library').on('keyup', function() {
+    $('#library-list li').hide();
+    $('#library-list span.title:contains("' + $(this).val() + '")').parent().show();
+  });
 });
