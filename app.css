@@ -107,3 +107,23 @@ li .notes {
 #play-button.shake {
   -webkit-animation: shake 5s;
 }
+
+@-webkit-keyframes dance {
+  0% { -webkit-transform: translateX(0px) translateY(0px); }
+  8% { -webkit-transform: translateX(50px) translateY(-50px); }
+  17% { -webkit-transform: translateX(100px) translateY(0px); }
+  25% { -webkit-transform: translateX(150px) translateY(-50px); }
+  33% { -webkit-transform: translateX(200px) translateY(0px); }
+  42% { -webkit-transform: translateX(250px) translateY(-50px); }
+  50% { -webkit-transform: translateX(300px) translateY(0px); }
+  58% { -webkit-transform: translateX(250px) translateY(-50px); }
+  67% { -webkit-transform: translateX(200px) translateY(0px); }
+  75% { -webkit-transform: translateX(150px) translateY(-50px); }
+  83% { -webkit-transform: translateX(100px) translateY(0px); }
+  92% { -webkit-transform: translateX(50px) translateY(-50px); }
+  100% { -webkit-transform: translateX(0px) translateY(0px); }
+}
+
+.dance {
+  -webkit-animation: dance 3s;
+}

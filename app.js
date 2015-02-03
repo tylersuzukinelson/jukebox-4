@@ -32,20 +32,44 @@ var initializeLibrary = function() {
 // Play all songs in the playlist.
 var playAll = function() {
 
+  // Variables for the logo dance
+  var danceForMe;
+  var danceMyPuppet;
+
   // Grab the top song in the queue, parse its notes and play them.
   // Then recurse until there are no more songs left in the queue.
   //
   var playNext = function() {
     var songItem = $('#playlist-list li:first-child');
 
+    // Make the JukeBox logo do a dance while the Jukebox is playing, and stop 
+    // when it's finished, using CSS keyframe animations.
+    if (typeof danceForMe == 'undefined') {
+      danceForMe = function() {
+        $('h1 span').addClass('dance');
+        $('h1 span').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+          $('h1 span').removeClass('dance');
+        });
+      };
+      danceForMe();
+      danceMyPuppet = setInterval(function() {
+        danceForMe();
+      }, 3050);
+    }
+
     if (songItem.length == 0) {
       // No more songs.
+
+      // Stop the dance
+      $('h1 span').removeClass('dance');
+      clearInterval(danceMyPuppet);
 
       // Re-enable the play button.
       $('#play-button').attr('disabled', false).text('Play All');
 
       // Fade out the message.
       $('#message').fadeOut();
+
       return;
     }
 
@@ -58,6 +82,13 @@ var playAll = function() {
     playSong(song, BPM, function() {
       songItem.remove();
       $('#library-list').append(songItem);
+      
+      // Stop the dance
+      if ($('#playlist-list').is(':empty')) {
+        $('h1 span').removeClass('dance');
+        clearInterval(danceMyPuppet);
+      }
+
       playNext();
     });
   };
@@ -131,5 +162,4 @@ $(document).ready(function() {
       $(this).removeClass('shake');
     }
   });
-
 });
