@@ -78,3 +78,32 @@ li .notes {
 }
 
 /* Add Your Styles Here */
+
+@-webkit-keyframes shake {
+  0% { -webkit-transform: rotate(0deg); }
+  10% { -webkit-transform: rotate(50deg); }
+  11% { -webkit-transform: rotate(60deg); }
+  12% { -webkit-transform: rotate(50deg); }
+  13% { -webkit-transform: rotate(60deg); }
+  30% { -webkit-transform: rotate(-50deg); }
+  31% { -webkit-transform: rotate(-60deg); }
+  32% { -webkit-transform: rotate(-50deg); }
+  33% { -webkit-transform: rotate(-60deg); }
+  50% { -webkit-transform: rotate(50deg); }
+  51% { -webkit-transform: rotate(60deg); }
+  52% { -webkit-transform: rotate(50deg); }
+  53% { -webkit-transform: rotate(60deg); }
+  70% { -webkit-transform: rotate(-50deg); }
+  71% { -webkit-transform: rotate(-60deg); }
+  72% { -webkit-transform: rotate(-50deg); }
+  73% { -webkit-transform: rotate(-60deg); }
+  90% { -webkit-transform: rotate(50deg); }
+  91% { -webkit-transform: rotate(60deg); }
+  92% { -webkit-transform: rotate(50deg); }
+  93% { -webkit-transform: rotate(60deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+
+#play-button.shake {
+  -webkit-animation: shake 5s;
+}

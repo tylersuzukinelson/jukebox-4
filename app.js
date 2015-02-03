@@ -118,4 +118,18 @@ $(document).ready(function() {
     $('#library-list li').hide();
     $('#library-list span.title:contains("' + $(this).val() + '")').parent().show();
   });
+
+  // Make the "Play" button shake when it is clicked but
+  // there are no songs in the playlist.
+  $('#play-button').on('click', function() {
+    if ($('#playlist-list').is(':empty')) {
+      $(this).addClass('shake');
+      $(this).bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+        $(this).removeClass('shake');
+      });
+    } else {
+      $(this).removeClass('shake');
+    }
+  });
+
 });
